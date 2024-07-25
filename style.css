@@ -378,34 +378,6 @@ body.nav-active { overflow: hidden; }
   opacity: 0.8;
 }
 
-
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -20px; /* Adjust the margin as needed */
-  }
-
-  .social-list {
-    display: flex;
-    justify-content: center;
-    margin-top: -10px; /* Adjust the margin as needed */
-  }
-
-  .social-link {
-    margin: 0 10px; /* Adjust spacing between social icons */
-  }
-}
-
-
-
-
-
-
-
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
