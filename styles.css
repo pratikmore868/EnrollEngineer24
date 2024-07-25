@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUE2YX5R25P_a8PBVoBqn2O0FD4AcJHREC_rl6Wa62IRjl6wUYKecO42PHReKOWlsUsr9Adhnk7xhKSggf3Rzf2cCBGwg3V_4kbdvQUG266JiNs0bVMpmf2DaTivYsjIJu4MNkgN734Ibq17tLD6mOhyphenhyphenSTIt052Ly4VWdWAcfGK28JtdQyQ-KKsvjf21MY/s1280/hero-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.courses {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.course h2 {
+    margin: 0;
+}
+
+.course ul, .course p {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course ul li, .course p {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.enroll-button {
+    background-color: #f39c12;
+}
+
+.enroll-button:hover {
+    background-color: #e67e22;
+}

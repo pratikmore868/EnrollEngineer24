@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUE2YX5R25P_a8PBVoBqn2O0FD4AcJHREC_rl6Wa62IRjl6wUYKecO42PHReKOWlsUsr9Adhnk7xhKSggf3Rzf2cCBGwg3V_4kbdvQUG266JiNs0bVMpmf2DaTivYsjIJu4MNkgN734Ibq17tLD6mOhyphenhyphenSTIt052Ly4VWdWAcfGK28JtdQyQ-KKsvjf21MY/s1280/hero-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center; /* Center align text */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial img.icon {
+    width: 70px; /* Increase the size of the icon */
+    height: 70px; /* Increase the size of the icon */
+    margin-top: -18px; /* Adjust margin to center the icon */
+    background-color: #fff; /* Add a white background to the icon */
+    border-radius: 50%; /* Make the icon circular */
+    padding: 10px; /* Add some padding around the icon */
+}
+
+.testimonial p {
+    margin-top: 20px; /* Adjust margin to avoid overlap with the icon */
+    font-size: 1em;
+}
+
+.testimonial h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.fa.fa-quote-left{
+    font-size: 34px;
+    color: orange;
+}
