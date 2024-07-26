@@ -72,7 +72,60 @@ button:hover {
     background-color: #45a049;
 }
 
-.fa.fa-quote-left{
+.fa.fa-quote-left {
     font-size: 34px;
     color: orange;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .testimonial {
+        width: 80%;
+        margin: 10px auto; /* Center align the testimonials */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .testimonial p {
+        font-size: 0.9em;
+    }
+
+    .testimonial h3 {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .testimonial p {
+        font-size: 0.8em;
+    }
+
+    .testimonial h3 {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .testimonial img.icon {
+        width: 50px;
+        height: 50px;
+    }
 }
