@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 /**
  * add event listener on multiple elements
  */
@@ -11,8 +9,6 @@ const addEventOnElements = function (elements, eventType, callback) {
     elements[i].addEventListener(eventType, callback);
   }
 }
-
-
 
 /**
  * NAVBAR TOGGLE FOR MOBILE
@@ -30,8 +26,6 @@ const toggleNavbar = function () {
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
-
-
 /**
  * HEADER
  * active header when window scroll down to 100px
@@ -47,8 +41,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
-
 /**
  * SLIDER
  */
@@ -56,7 +48,6 @@ window.addEventListener("scroll", function () {
 const sliders = document.querySelectorAll("[data-slider]");
 
 const initSlider = function(currentSlider) {
-
   const sldierContainer = currentSlider.querySelector("[data-slider-container]");
   const sliderPrevBtn = currentSlider.querySelector("[data-slider-prev]");
   const sliderNextBtn = currentSlider.querySelector("[data-slider-next]");
@@ -89,8 +80,7 @@ const initSlider = function(currentSlider) {
    * PREVIOUS SLIDE
    */
 
-   const slidePrev = function () {
-
+  const slidePrev = function () {
     if (currentSlidePos <= 0) {
       currentSlidePos = sldierContainer.childElementCount - 1;
     } else {
@@ -108,11 +98,21 @@ const initSlider = function(currentSlider) {
     sliderPrevBtn.style.display = "none";
   }
 
+  // Auto-scroll functionality
+  let autoScrollInterval;
+  const autoScroll = function() {
+    autoScrollInterval = setInterval(slideNext, 2000); // Change slide every 3 seconds
+  }
+
+  autoScroll(); // Start auto-scrolling
+
+  currentSlider.addEventListener('mouseenter', () => clearInterval(autoScrollInterval)); // Pause on hover
+  currentSlider.addEventListener('mouseleave', autoScroll); // Resume on mouse leave
 }
 
-for (let i = 0, len = sliders.length; i < len; i++) { initSlider(sliders[i]); }
-
-
+for (let i = 0, len = sliders.length; i < len; i++) { 
+  initSlider(sliders[i]); 
+}
 
 /**
  * ACCORDION
@@ -123,7 +123,6 @@ const accordions = document.querySelectorAll("[data-accordion]");
 let lastActiveAccordion = accordions[0];
 
 const initAccordion = function (currentAccordion) {
-
   const accordionBtn = currentAccordion.querySelector("[data-accordion-btn]");
 
   const expandAccordion = function () {
@@ -137,7 +136,8 @@ const initAccordion = function (currentAccordion) {
   }
 
   accordionBtn.addEventListener("click", expandAccordion);
-
 }
 
-for (let i = 0, len = accordions.length; i < len; i++) { initAccordion(accordions[i]); }
+for (let i = 0, len = accordions.length; i < len; i++) { 
+  initAccordion(accordions[i]); 
+}
