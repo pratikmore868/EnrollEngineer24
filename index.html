@@ -869,6 +869,7 @@
         const delay = parseFloat(numscroller.getAttribute('data-delay')) * 1000;
         const increment = parseInt(numscroller.getAttribute('data-increment'), 10);
         let currentNumber = min;
+        let observer;
 
         function updateNumber() {
             if (currentNumber < max) {
@@ -880,7 +881,19 @@
             }
         }
 
-        updateNumber();
+        function startObserver() {
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateNumber();
+                        observer.disconnect(); // Stop observing after the first increment
+                    }
+                });
+            }, { threshold: 0.5 }); // Adjust threshold as needed
+            observer.observe(numscroller);
+        }
+
+        startObserver();
     });
 </script>
 </body>
