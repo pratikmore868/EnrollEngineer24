@@ -862,40 +862,41 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const numscroller = document.querySelector('.numscroller');
-        const min = parseInt(numscroller.getAttribute('data-min'), 10);
-        const max = parseInt(numscroller.getAttribute('data-max'), 10);
-        const delay = parseFloat(numscroller.getAttribute('data-delay')) * 1000;
-        const increment = parseInt(numscroller.getAttribute('data-increment'), 10);
-        let currentNumber = min;
-        let observer;
+        document.addEventListener("DOMContentLoaded", function() {
+            const numscrollers = document.querySelectorAll('.numscroller');
 
-        function updateNumber() {
-            if (currentNumber < max) {
-                currentNumber += increment;
-                numscroller.textContent = currentNumber + '+';
-                setTimeout(updateNumber, delay);
-            } else {
-                numscroller.textContent = max + '+';
+            function updateNumber(numscroller) {
+                const min = parseInt(numscroller.getAttribute('data-min'), 10);
+                const max = parseInt(numscroller.getAttribute('data-max'), 10);
+                const delay = parseFloat(numscroller.getAttribute('data-delay')) * 1000;
+                const increment = parseInt(numscroller.getAttribute('data-increment'), 10);
+                let currentNumber = min;
+
+                function incrementNumber() {
+                    if (currentNumber < max) {
+                        currentNumber += increment;
+                        numscroller.textContent = currentNumber + '+';
+                        setTimeout(incrementNumber, delay);
+                    } else {
+                        numscroller.textContent = max + '+';
+                    }
+                }
+
+                incrementNumber();
             }
-        }
 
-        function startObserver() {
-            observer = new IntersectionObserver((entries) => {
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        updateNumber();
-                        observer.disconnect(); // Stop observing after the first increment
+                        updateNumber(entry.target);
+                        observer.unobserve(entry.target); // Stop observing after the first increment
                     }
                 });
-            }, { threshold: 0.5 }); // Adjust threshold as needed
-            observer.observe(numscroller);
-        }
+            }, { threshold: 0.5 });
 
-        startObserver();
-    });
-</script>
+            numscrollers.forEach(numscroller => observer.observe(numscroller));
+        });
+    </script>
 </body>
 
 </html>
