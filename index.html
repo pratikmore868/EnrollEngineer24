@@ -519,7 +519,7 @@
 
             <li>
               <p class="card-text">
-                <span class="h1">300+</span>
+                <span class="numscroller font-weight-bold my-2 scrollzip roller-title-number-1 isShown" data-slno="10" data-min="200" data-max="300" data-delay=".05" data-increment="2" class="h1">300+</span>
 
                 <spna class="span">Consulated Students</spna>
               </p>
@@ -527,7 +527,7 @@
 
             <li>
               <p class="card-text">
-                <span class="h1">250+</span>
+                <span class="numscroller font-weight-bold my-2 scrollzip roller-title-number-1 isShown" data-slno="10" data-min="150" data-max="250" data-delay=".05" data-increment="2" class="h1">250+</span>
 
                 <spna class="span">Engineering Aspirants </spna>
               </p>
@@ -535,7 +535,7 @@
 
             <li>
               <p class="card-text">
-                <span class="h1">100+</span>
+                <span class="numscroller font-weight-bold my-2 scrollzip roller-title-number-1 isShown" data-slno="10" data-min="1" data-max="100" data-delay=".05" data-increment="2" class="h1">100+</span>
 
                 <spna class="span">Registered Students</spna>
               </p>
@@ -543,7 +543,7 @@
 
             <li>
               <p class="card-text">
-                <span class="h1">20+</span>
+                <span class="numscroller font-weight-bold my-2 scrollzip roller-title-number-1 isShown" data-slno="10" data-min="0" data-max="20" data-delay=".05" data-increment="2" class="h1">20+</span>
 
                 <spna class="span">Expert Engineers Team</spna>
               </p>
@@ -861,7 +861,28 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const numscroller = document.querySelector('.numscroller');
+        const min = parseInt(numscroller.getAttribute('data-min'), 10);
+        const max = parseInt(numscroller.getAttribute('data-max'), 10);
+        const delay = parseFloat(numscroller.getAttribute('data-delay')) * 1000;
+        const increment = parseInt(numscroller.getAttribute('data-increment'), 10);
+        let currentNumber = min;
 
+        function updateNumber() {
+            if (currentNumber < max) {
+                currentNumber += increment;
+                numscroller.textContent = currentNumber + '+';
+                setTimeout(updateNumber, delay);
+            } else {
+                numscroller.textContent = max + '+';
+            }
+        }
+
+        updateNumber();
+    });
+</script>
 </body>
 
 </html>
