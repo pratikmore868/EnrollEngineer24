@@ -1093,5 +1093,110 @@ body.nav-active { overflow: hidden; }
 }
 
 
+/* General Section Styling */
+.has_eae_slider {
+  background-color: #f5f5f5; /* Light grey background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Container and Columns */
+.elementor-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.elementor-column {
+  padding: 10px;
+}
+
+/* Button Styling */
+.elementor-button {
+  background-color: #007bff; /* Primary blue color */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.elementor-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.elementor-button .elementor-button-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Marquee Container Styling */
+.educms-download-main-marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 50px; /* Adjust based on content height */
+  background-color: #ffffff; /* Optional background color */
+  border: 1px solid #ddd; /* Optional border */
+  border-radius: 5px;
+}
+
+.educms-download-marquee-content-items {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  animation: marquee 30s linear infinite; /* Adjust duration as needed */
+}
+
+/* Ensure Enough Content for Scrolling */
+.educms-download-marquee-content-items::after {
+  content: attr(data-content);
+  display: inline-block;
+  margin-left: 30px; /* Space between repeated content */
+}
+
+/* List Items Styling */
+.educms-download-marquee-content-items li {
+  display: inline-block;
+  margin-right: 30px; /* Space between items */
+}
+
+.educms-download-marquee-content-items li a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.educms-download-marquee-content-items li a:hover {
+  color: #0056b3;
+}
+
+.bordr-content {
+  border-left: 1px solid #ddd;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+/* Keyframes for Continuous Sliding */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .elementor-container {
+      flex-direction: column;
+  }
+
+  .elementor-column {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
 
 
