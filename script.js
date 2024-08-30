@@ -141,3 +141,41 @@ const initAccordion = function (currentAccordion) {
 for (let i = 0, len = accordions.length; i < len; i++) { 
   initAccordion(accordions[i]); 
 }
+
+
+
+jQuery(function($) {
+  $(".educms-marquee-horizontal-1").marquee({
+      allowCss3Support: true,
+      css3easing: "linear",
+      easing: "linear",
+      delayBeforeStart: 1000,
+      direction: "left",
+      duplicated: false,
+      duration: 15000, // Match this with the CSS animation duration
+      gap: 10,
+      pauseOnCycle: true,
+      pauseOnHover: true,
+      startVisible: true
+  });
+
+  $(".educms-marquee-horizontal-1").children().addClass("horizantal-animateState-1");
+
+  $(".h-pausemarquee-1").click(function() {
+      $(".horizantal-animateState-1").css("animationPlayState", "paused");
+      $(".h-pausemarquee-1").css("display", "none");
+      $(".h-playmarquee-1").css("display", "block");
+  });
+
+  $(".h-playmarquee-1").click(function() {
+      $(".horizantal-animateState-1").css("animationPlayState", "running");
+      $(".h-playmarquee-1").css("display", "none");
+      $(".h-pausemarquee-1").css("display", "block");
+  });
+});
+
+
+
+
+
+
